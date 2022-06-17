@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package proto;
 
+option go_package = "github.com/sammyne/protobuf3-scala2.13-quickstart/checker/pb";
+
 message SearchRequest {
   string query = 1;
   int32 page_number = 2;
