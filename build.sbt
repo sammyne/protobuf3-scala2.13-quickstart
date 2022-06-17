@@ -84,5 +84,6 @@ libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % 
 
 libraryDependencies ++= Seq(
   // "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf"
-  "com.thesamet.scalapb" %% "scalapb-runtime" % "0.11.11"
+  "com.thesamet.scalapb" %% "scalapb-runtime" % "0.11.11",
+  "com.thesamet.scalapb" %% "scalapb-json4s" % "0.11.1"
 )

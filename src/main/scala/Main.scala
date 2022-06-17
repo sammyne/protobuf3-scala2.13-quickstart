@@ -1,4 +1,8 @@
 import proto.SearchRequest
+import scalapb.json4s.JsonFormat
+import scalapb.json4s.Printer
+import scalapb.json4s.Parser
+
 object Main extends App {
   val req =
     new SearchRequest(query = "hello", pageNumber = 123, resultPerPage = 456)
@@ -21,4 +25,14 @@ object Main extends App {
 
   private def hexlify(b: Array[Byte]): String = b.map("%02x".format(_)).mkString
   private def unhexlify(s: String): Array[Byte] = BigInt(s, 16).toByteArray
+
+  // json
+  val gotJSON = JsonFormat.toJsonString(got)
+  println(s"$gotJSON")
+
+  val gotFromJSON = JsonFormat.fromJsonString[SearchRequest](gotJSON)
+  println(s"$gotFromJSON")
+
+  val got2 = new Parser().ignoringUnknownFields.fromJsonString[SearchRequest](gotJSON)
+  println(s"$got2")
 }
