@@ -77,7 +77,12 @@ libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % 
 //Compile / PB.targets := Seq(
 //  scalapb.gen() -> (Compile / sourceManaged).value / "scalapb"
 //)
-//
+
 //Compile / PB.protoSources := Seq(
-//  file("src/main/proto")
+//  file("src/main/scala/proto")
 //)
+
+libraryDependencies ++= Seq(
+  // "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf"
+  "com.thesamet.scalapb" %% "scalapb-runtime" % "0.11.11"
+)
